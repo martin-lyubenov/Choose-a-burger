@@ -6,7 +6,7 @@ function chooseABurger() {
 
       let guess;
       
-      let computerGuess = Math.floor(Math.random()  * 18);
+      let computerGuess = Math.floor((Math.random()  * 18) + 1);
 
       let burgerList = ['Cheese Burger', 
       'Cheese Jam', 
@@ -29,8 +29,7 @@ function chooseABurger() {
     ]
 
 
-    let choseBurger = burgerList[computerGuess];
-
+    let choseBurger = burgerList[computerGuess-1];
 
     let tryAgain = function () {
       readline.question(
@@ -64,6 +63,7 @@ function chooseABurger() {
               tryAgain();
             } else {
                     console.log('Lyyyyyyn you have to type Run or run to get a burger!');
+                    tryAgain();
             }
           }
         );
